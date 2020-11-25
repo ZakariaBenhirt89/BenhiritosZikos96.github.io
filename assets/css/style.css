@@ -5,13 +5,15 @@ fonts that i added
   font-family : drSugiyama ; 
   src : url(../vendor/fonts/DrSugiyama-Regular.ttf)
 }
-
+/* my color variables */ 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
+  --text-color : rgb(79, 173, 87) ; 
+  --my-theme : #050914 ; 
 }
 
 a {
@@ -215,6 +217,12 @@ h1, h2, h3, h4, h5, h6 {
   background: url("../img/hero-bg.jpg") top center;
   background-size: cover;
 }
+.darkmode--activated #hero{
+  mix-blend-mode: difference;
+}
+.darkmode--activated .about-img {
+  mix-blend-mode: difference;
+}
 
 #hero:before {
   content: "";
@@ -238,6 +246,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 64px;
   font-weight: 700;
   line-height: 56px;
+  font-family :  drSugiyama ; 
   color: #fff;
 }
 
@@ -492,6 +501,7 @@ section {
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
   margin-bottom: 30px;
+  height: 30vh ;
 }
 
 .portfolio #portfolio-flters {
@@ -656,6 +666,7 @@ section {
   margin: 0 auto;
 }
 
+
 .testimonials .testimonial-item h3 {
   font-size: 18px;
   font-weight: bold;
@@ -727,6 +738,22 @@ section {
 .testimonials .owl-dot.active {
   background-color: #149ddd !important;
 }
+/*dark mode style */ 
+.dark section , .dark form , .dark .contact .info {
+  transition : all 0.3s ease-out ; 
+  color : var(--text-color) !important ; 
+  /*background-image: none !important; */
+  background-color : var(--my-theme) !important; 
+  text-shadow : none !important; 
+  box-shadow : none !important;
+  }
+  .dark h4:nth-child(n+1) , .dark .resume-title , .dark .skills .progress .skill  {
+    color : #18d26e ; 
+  }
+  
+  .dark .contact .info h4 , .dark .contact .info p {
+   color : #18d26e ; 
+  }
 
 @media (max-width: 767px) {
   .testimonials {
@@ -1044,6 +1071,7 @@ section {
   padding: 0;
 }
 
+
 @media (max-width: 768px) {
   .portfolio-details .portfolio-description h2 {
     width: 100%;
@@ -1053,12 +1081,24 @@ section {
     margin-top: 30px;
   }
   
+  
+}
+  /* dark mode ignore */ 
+.darkmode-ignore{
+  mix-blend-mode: difference;
+}
+.darkmode-layer, .darkmode-toggle {
+  z-index: 500;
+}
+.flag {
+  mix-blend-mode : difference ; 
 }
 /* Making the ones */
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
 #footer {
   padding: 15px;
   color: #f4f6fd;
@@ -1081,6 +1121,7 @@ section {
   font-size: 13px;
   color: #eaebf0;
 }
+
 
 @media (max-width: 1199px) {
   #footer {
